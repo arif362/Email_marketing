@@ -1,14 +1,16 @@
 Rails.application.routes.draw do
+  get 'mail_stores/template'
+
   devise_for :users, controllers: { sessions: 'users/sessions' }
   get 'home/index'
-  devise_for :users, path: 'auth', path_names: { sign_in: 'login', sign_out: 'logout', password: 'secret', confirmation: 'verification', unlock: 'unblock', registration: 'register', sign_up: 'cmon_let_me_in' }
+#  devise_for :users, path: 'auth', path_names: { sign_in: 'login', sign_out: 'logout', password: 'secret', confirmation: 'verification', unlock: 'unblock', registration: 'register', sign_up: 'cmon_let_me_in' }
 
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-   root 'home#index'
+   root 'mail_stores#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
@@ -20,16 +22,9 @@ Rails.application.routes.draw do
   #   resources :products
 
   # Example resource route with options:
-  #   resources :products do
-  #     member do
-  #       get 'short'
-  #       post 'toggle'
-  #     end
-  #
-  #     collection do
-  #       get 'sold'
-  #     end
-  #   end
+    resources :mail_stores do
+    get 'template', on: :collection
+    end
 
   # Example resource route with sub-resources:
   #   resources :products do

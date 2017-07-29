@@ -1,2 +1,35 @@
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
+<link href='https://fonts.googleapis.com/css?family=Open Sans' rel='stylesheet' type='text/css'>
+<link href="https://netdna.bootstrapcdn.com/font-awesome/3.0.2/css/font-awesome.css" rel="stylesheet">
+<div id="content">
+  <h1>Syftet</h1>
+
+    <%= form_for '#'  do |f| %>
+
+        <div class="form-group col-md-6">
+          <%= f.label :subject, '*Subject' %>
+          <%= f.text_field :subject, placeholder: 'What would you like to talk about?' %>
+        </div>
+
+        <div class="form-group col-md-6">
+          <%= f.label :title, '*Title'%>
+          <%= f.text_field :title, placeholder: 'Type your title' %>
+        </div>
+
+        <div class="form-group col-md-6">
+          <%= f.label :receipent, 'Receipent*', class:'icon-envelope' %>
+          <%= f.text_field :receipent, placeholder: 'I promise I hate spam too!' %>
+        </div>
+
+        <div class="form-group col-md-6">
+          <%= f.label :message, 'Message*', class:'icon-comment' %>
+          <%= f.text_area :message, placeholder: 'Your message here' %>
+        </div>
+
+        <div class="form-group col-md-12">
+          <%= f.submit 'Attachment', class: 'btn btn-info pull-left' %>
+          <%= f.submit 'Send', class: 'btnx btn-info submit-btn pull-right' %>
+        </div>
+
+    <% end %>
+
+</div>

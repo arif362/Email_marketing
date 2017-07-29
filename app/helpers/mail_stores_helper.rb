@@ -1,0 +1,2 @@
+module MailStoresHelper
+end
