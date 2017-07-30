@@ -2,20 +2,14 @@ class MailStoresController < ApplicationController
 
   def new
     @email = MailStore.new
+    @pending_jobs = Delayed::Job.where("handler LIKE '%EmailSendJob%'")
   end
 
   def create
     @email = MailStore.new(mail_store_params)
     respond_to do |format|
       if @email.save
-        all_recipient = @email.recipient.split(/,/)
-        number_of_recipient =  all_recipient.length
-
-        (0..number_of_recipient-1).each do |index|
-          email = all_recipient[index]
-          mail_recipient = MailStore.find_by_id(@email.id)
-          UserMailer.send_email(email, mail_recipient).deliver_now
-        end
+        Delayed::Job.enqueue(EmailSendJob.new(@email))
         format.html {redirect_to new_mail_store_path , notice: 'Email send successfully'}
       else
         format.html {redirect_to new_mail_store_path , notice: 'Email failed to send try again'}

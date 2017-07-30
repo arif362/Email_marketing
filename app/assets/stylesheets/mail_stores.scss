@@ -66,8 +66,8 @@ h1:before {
 #content {
   position:relative;
   margin:50px auto;
-  width:500px;
-  min-height:540px;
+  width:400px;
+  min-height:200px;
   z-index:100;
   padding:30px;
   border:1px solid #383838;
@@ -204,9 +204,7 @@ label:hover:before {
   -moz-transition: color 1s ease;
   transition: color 1s ease;
 }
-p {
-  margin-bottom:20px;
-}
+
 .indication {
   color:#878787;
   font-size:12px;

@@ -1,3 +1,15 @@
+<style>
+  .login-panel{
+      width: 30%;
+      height: 220px;
+      margin: auto;
+      background: #E0E0E0;
+      border: 1px solid #878787;
+      padding: 60px;
+  }
+</style>
+
+<div class="login-panel">
 <h2>Log in</h2>
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
@@ -24,3 +36,4 @@
 <% end %>
 
 <%= render "users/shared/links" %>
+</div>
