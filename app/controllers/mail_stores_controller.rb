@@ -1,9 +1,5 @@
 class MailStoresController < ApplicationController
 
-  def index
-
-  end
-
   def new
     @email = MailStore.new
   end
@@ -13,16 +9,11 @@ class MailStoresController < ApplicationController
     respond_to do |format|
       if @email.save
         UserMailer.send_email(@email).deliver_now
-        format.html {redirect_to mail_stores_path , notice: 'Email saved successfully'}
+        format.html {redirect_to new_mail_store_path , notice: 'Email send successfully'}
       else
-        format.html {render :new, notice: 'E-mail failed to saved'}
+        format.html {redirect_to new_mail_store_path , notice: 'Email failed to send try again'}
       end
     end
-  end
-
-
-  def template
-
   end
 
   private

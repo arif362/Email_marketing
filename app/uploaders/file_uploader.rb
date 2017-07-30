@@ -38,21 +38,21 @@ class FileUploader < CarrierWave::Uploader::Base
 
 
   # Create different versions of your uploaded files:
-  version :large, :if => :image? do
-    process :resize_to_fit => [200, 200]
-  end
-
-  version :thumb, :if => :image? do
-    process :resize_to_fit => [100, 100]
-  end
-
-  version :small, :if => :image? do
-    process :resize_to_fit => [50, 50]
-  end
-
-  version :fullscreen, :if => :image? do
-    process :resize_to_fit => [1200, 296]
-  end
+  # version :large, :if => :image? do
+  #   process :resize_to_fit => [200, 200]
+  # end
+  #
+  # version :thumb, :if => :image? do
+  #   process :resize_to_fit => [100, 100]
+  # end
+  #
+  # version :small, :if => :image? do
+  #   process :resize_to_fit => [50, 50]
+  # end
+  #
+  # version :fullscreen, :if => :image? do
+  #   process :resize_to_fit => [1200, 296]
+  # end
 
 
   # version :thumb do
@@ -65,10 +65,10 @@ class FileUploader < CarrierWave::Uploader::Base
     %w(jpg jpeg gif png pdf doc docx xlsx xls)
   end
 
-  protected
-  def image?(new_file)
-    new_file.content_type.start_with? 'image'
-  end
+  # protected
+  # def image?(new_file)
+  #   new_file.content_type.start_with? 'image'
+  # end
   # Override the filename of the uploaded files:
   # Avoid using model.id or version_name here, see uploader/store.rb for details.
   # def filename

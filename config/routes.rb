@@ -1,7 +1,15 @@
 Rails.application.routes.draw do
   get 'mail_stores/template'
 
-  devise_for :users, controllers: { sessions: 'users/sessions' }
+  #devise_for :users, controllers: { sessions: 'users/sessions' }
+  devise_for :users, controllers: {
+                           sessions: 'users/sessions',
+                           passwords: 'users/passwords',
+                           registrations: 'users/registrations',
+                           unlocks: 'users/unlocks',
+                           confirmations: 'users/confirmations',
+                           invitations: 'users/invitations'
+                       }
   get 'home/index'
 #  devise_for :users, path: 'auth', path_names: { sign_in: 'login', sign_out: 'logout', password: 'secret', confirmation: 'verification', unlock: 'unblock', registration: 'register', sign_up: 'cmon_let_me_in' }
 
@@ -10,7 +18,7 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-   root 'mail_stores#index'
+   root 'mail_stores#new'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
@@ -23,7 +31,6 @@ Rails.application.routes.draw do
 
   # Example resource route with options:
     resources :mail_stores do
-    get 'template', on: :collection
     end
 
   # Example resource route with sub-resources:

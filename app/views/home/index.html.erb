@@ -1,35 +1,91 @@
-<link href='https://fonts.googleapis.com/css?family=Open Sans' rel='stylesheet' type='text/css'>
-<link href="https://netdna.bootstrapcdn.com/font-awesome/3.0.2/css/font-awesome.css" rel="stylesheet">
-<div id="content">
-  <h1>Syftet</h1>
+<div>
+  <style>
+      .template{
+          margin: auto;
+          padding: 0;
+          height: 650px;
+          width: 60%;
+          background: #FFFFFF;
+          background-image: url('Page-1-Image-1.png');
+          /*background: url(Page-1-Image-1.png);*/
+          margin-top: 20px;
+          margin-bottom: 20px;
+          border: 1px solid #DADADA;
+      }
 
-    <%= form_for '#'  do |f| %>
+      .header{
+          height: 100px;
+          width: 100% ;
+          background: #F7F7F7;
+      }
+      .logo{
+          text-align: center;
+          padding: 15px;
+      }
 
-        <div class="form-group col-md-6">
-          <%= f.label :subject, '*Subject' %>
-          <%= f.text_field :subject, placeholder: 'What would you like to talk about?' %>
-        </div>
+      .content {
+          height: 450px;
+          width: 100%;
+          margin: auto;
+      }
 
-        <div class="form-group col-md-6">
-          <%= f.label :title, '*Title'%>
-          <%= f.text_field :title, placeholder: 'Type your title' %>
-        </div>
+      .welcome-note{
+            text-align: center;
+      }
+          .description{
+              width: 80%;
+              margin: auto;
+              text-align: justify;
+          }
+          .button{
+              text-align: center;
+              background-color: #00BBEA;
+              width: 20%;
+              height: 20px;
+              margin: auto;
+              padding: 10px;
+              text-decoration: none;
+          }
+          .slide{
+              margin-top: 20px;
+              width: 80%;
+              height: 300px;
+              margin: auto;
+              padding: 20px;
 
-        <div class="form-group col-md-6">
-          <%= f.label :receipent, 'Receipent*', class:'icon-envelope' %>
-          <%= f.text_field :receipent, placeholder: 'I promise I hate spam too!' %>
-        </div>
+          }
 
-        <div class="form-group col-md-6">
-          <%= f.label :message, 'Message*', class:'icon-comment' %>
-          <%= f.text_area :message, placeholder: 'Your message here' %>
-        </div>
+  </style>
+</div>
+<div class="template" ;>
+  <div class="header">
+    <div class="logo">
+      <%= image_tag("syftet-logo.png", :alt => "" ) %>
+    </div>
+  </div>
 
-        <div class="form-group col-md-12">
-          <%= f.submit 'Attachment', class: 'btn btn-info pull-left' %>
-          <%= f.submit 'Send', class: 'btnx btn-info submit-btn pull-right' %>
-        </div>
+  <div class="content">
 
-    <% end %>
+    <div class="welcome-note">
+      <p><b>Business process automation with Beaccount.</b></p>
+    </div>
 
+    <div class="description">
+      <p >It's not a matter what type or size of business. We offer module based service and we have lot's of module.
+        Choose your module that are best fit for your business.It's not a matter what type or size of business. We offer module based service and we have lot's of module.
+        Choose your module that are best fit for your business.It's not a matter what type or size of business. We offer module based service and we have lot's of module.
+        Choose your module that are best fit for your business.</p>
+    </div>
+
+    <div class="button">
+      <%#= link_to "Let's Get Started"  %>
+      <a href="#"> Let's Get Started </a>
+    </div>
+    <div class="slide">
+      <%= image_tag("beaccount.jpg", height: '250px', width: '610px', :alt => "") %>
+    </div>
+
+  </div>
+
+  <div class="footer"></div>
 </div>

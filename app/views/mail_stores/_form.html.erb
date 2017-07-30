@@ -1,8 +1,9 @@
 <link href='https://fonts.googleapis.com/css?family=Open Sans' rel='stylesheet' type='text/css'>
 <link href="https://netdna.bootstrapcdn.com/font-awesome/3.0.2/css/font-awesome.css" rel="stylesheet">
 <div id="content">
-  <h1>Syftet</h1>
 
+  <h1>Syftet</h1>
+  <%= link_to 'Logout', destroy_user_session_path, :method => :delete , class:'btn btn-primary pull-right' %>
   <%= form_for @email do |f| %>
 
       <div class="form-group col-md-6">

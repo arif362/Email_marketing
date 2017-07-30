@@ -1,1 +1,89 @@
-<h1>Welcome to Syftet</h1>
+<div>
+  <style>
+      .template{
+          margin: auto;
+          padding: 0;
+          height: 650px;
+          width: 60%;
+          background: #FFFFFF;
+          margin-top: 20px;
+          margin-bottom: 20px;
+          border: 1px solid #DADADA;
+      }
+
+      .header{
+          height: 100px;
+          width: 100% ;
+          background: #F7F7F7;
+      }
+      .logo{
+          text-align: center;
+          padding: 15px;
+      }
+
+      .content {
+          height: 450px;
+          width: 100%;
+          margin: auto;
+      }
+
+      .welcome-note{
+          text-align: center;
+      }
+      .description{
+          width: 80%;
+          margin: auto;
+          text-align: justify;
+      }
+      .button{
+          text-align: center;
+          background-color: #00BBEA;
+          width: 20%;
+          height: 20px;
+          margin: auto;
+          padding: 10px;
+          text-decoration: none;
+      }
+      .slide{
+          margin-top: 20px;
+          width: 80%;
+          height: 300px;
+          margin: auto;
+          padding: 20px;
+
+      }
+
+  </style>
+</div>
+<div class="template">
+
+  <div class="header">
+    <div class="logo">
+      <%= image_tag("syftet-logo.png", :alt => "" ) %>
+    </div>
+  </div>
+
+  <div class="content">
+
+    <div class="welcome-note">
+      <p><b><%= @email.title %></b></p>
+    </div>
+
+    <div class="description">
+      <p><%= @email.message %></p>
+    </div>
+
+    <div class="button">
+      <a href="#"> Let's Get Started </a>
+      <%#= link_to "Let's Get Started"  %>
+    </div>
+    <div class="slide">
+      <%= image_tag("beaccount.jpg", height: '250px', width: '610px', :alt => "") %>
+    </div>
+
+  </div>
+
+  <div class="footer"></div>
+
+
+</div>
