@@ -1,33 +1,32 @@
-<link href='https://fonts.googleapis.com/css?family=Open Sans' rel='stylesheet' type='text/css'>
-<link href="https://netdna.bootstrapcdn.com/font-awesome/3.0.2/css/font-awesome.css" rel="stylesheet">
+
 <div id="content">
 
   <h1>Syftet</h1>
   <%= link_to 'Logout', destroy_user_session_path, :method => :delete , class:'btn btn-primary pull-right' %>
   <%= form_for @email do |f| %>
 
-      <div class="form-group col-md-6">
-        <%= f.label :subject, '*Subject' %>
-        <%= f.text_field :subject, placeholder: 'What would you like to talk about?' %>
+      <div class="form-group col-md-6 mt15">
+        <%= f.label :subject, 'Subject*', class:'icon-bullhorn' %>
+        <%= f.text_field :subject, placeholder: 'What would you like to talk about?', required: true %>
       </div>
 
-      <div class="form-group col-md-6">
-        <%= f.label :title, '*Title'%>
-        <%= f.text_field :title, placeholder: 'Type your title' %>
+      <div class="form-group col-md-6 mt15">
+        <%= f.label :title, 'Title*', class:'icon-bullhorn' %>
+        <%= f.text_field :title, placeholder: 'Type your title', required: true %>
       </div>
 
-      <div class="form-group col-md-6">
+      <div class="form-group col-md-6 mt15">
         <%= f.label :recipient, 'Receipent*', class:'icon-envelope' %>
-        <%= f.text_field :recipient, placeholder: 'I promise I hate spam too!' %>
+        <%= f.text_field :recipient, placeholder: 'I promise I hate spam too!', required: true %>
       </div>
 
-      <div class="form-group col-md-6">
+      <div class="form-group col-md-6 mt15">
         <%= f.label :message, 'Message*', class:'icon-comment' %>
-        <%= f.text_area :message, placeholder: 'Your message here' %>
+        <%= f.text_area :message, placeholder: 'Your message here', required: true %>
       </div>
 
-      <div class="form-group col-md-12">
-        <%= f.file_field :attachment, class: 'btn btn-info' %>
+      <div class="form-group col-md-12 mt15">
+        <%= f.file_field :attachment, class: 'fa fa-paperclip' %>
         <%= f.submit 'Send', class: 'btn btn-info submit-btn pull-right' %>
       </div>
 
