@@ -1,8 +1,16 @@
-
+<!--<!DOCTYPE html>-->
+<!--<html>-->
+<!--<head>-->
+  <!--<script src="https://cloud.tinymce.com/stable/tinymce.min.js"></script>-->
+  <!--<script>tinymce.init({ selector:'textarea' });</script>-->
+<!--</head>-->
+<!--<body>-->
+<!--&lt;!&ndash;<textarea>Next, get a free TinyMCE Cloud API key!</textarea>&ndash;&gt;-->
+<!--</body>-->
+<!--</html>-->
 <div id="content">
 
   <h1>Syftet</h1>
-  <%#= link_to 'Logout', destroy_user_session_path, :method => :delete , class:'btn btn-primary pull-right' %>
   <%= form_for @email do |f| %>
 
       <div class="form-group col-md-6 mt15">
@@ -33,3 +41,6 @@
   <% end %>
 
 </div>
+
+<script src="https://cloud.tinymce.com/stable/tinymce.min.js"></script>
+<script>tinymce.init({ selector:'textarea' });</script>

@@ -65,8 +65,8 @@ h1:before {
 /* Here comes to good stuff : content styling */
 #content {
   position:relative;
-  margin:50px auto;
-  width:400px;
+  margin: auto;
+  width:550px;
   min-height:200px;
   z-index:100;
   padding:30px;
@@ -121,7 +121,7 @@ input:required, textarea:required {
 input:not([type="submit"]), textarea {
   outline:none;
   display:block;
-  width:380px;
+  width:535px;
   padding:4px 8px;
   border:1px dashed #DBDBDB;
   color:#3F3F3F;
