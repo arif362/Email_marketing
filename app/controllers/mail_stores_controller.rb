@@ -6,6 +6,12 @@ class MailStoresController < ApplicationController
   end
 
   def create
+    if params[:file].present?
+      p '********************************'
+      p params[:file]
+      p '********************************'
+    end
+
     @email = MailStore.new(mail_store_params)
     respond_to do |format|
       if @email.save

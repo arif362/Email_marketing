@@ -1,8 +1,8 @@
 <!--<!DOCTYPE html>-->
 <!--<html>-->
 <!--<head>-->
-  <!--<script src="https://cloud.tinymce.com/stable/tinymce.min.js"></script>-->
-  <!--<script>tinymce.init({ selector:'textarea' });</script>-->
+<!--<script src="https://cloud.tinymce.com/stable/tinymce.min.js"></script>-->
+<!--<script>tinymce.init({ selector:'textarea' });</script>-->
 <!--</head>-->
 <!--<body>-->
 <!--&lt;!&ndash;<textarea>Next, get a free TinyMCE Cloud API key!</textarea>&ndash;&gt;-->
@@ -28,6 +28,11 @@
         <%= f.text_field :recipient, placeholder: 'I promise I hate spam too!', required: true %>
       </div>
 
+      <div class="form-group col-md-6 mt5">
+        <%#= f.file_field  placeholder: 'I promise I hate spam too!' %>
+        <%= file_field_tag :file %>
+      </div>
+
       <div class="form-group col-md-6 mt15">
         <%= f.label :message, 'Message*', class:'icon-comment' %>
         <%= f.text_area :message, placeholder: 'Your message here', required: true %>
@@ -42,5 +47,5 @@
 
 </div>
 
-<script src="https://cloud.tinymce.com/stable/tinymce.min.js"></script>
-<script>tinymce.init({ selector:'textarea' });</script>
+<!--<script src="https://cloud.tinymce.com/stable/tinymce.min.js"></script>-->
+<!--<script>tinymce.init({ selector:'textarea' })</script>-->
