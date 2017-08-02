@@ -7,18 +7,21 @@ class MailStoresController < ApplicationController
 
   def create
     if params[:file].present?
-      p '********************************'
-      p params[:file]
-      p '********************************'
-    end
-
-    @email = MailStore.new(mail_store_params)
-    respond_to do |format|
-      if @email.save
-        Delayed::Job.enqueue(EmailSendJob.new(@email))
-        format.html {redirect_to new_mail_store_path , notice: 'Email send successfully'}
-      else
-        format.html {redirect_to new_mail_store_path , notice: 'Email failed to send try again'}
+      begin
+        MailStore.import(params[:file],mail_store_params)
+        redirect_to new_mail_store_path, notice: "Email send successfully"
+      rescue
+        redirect_to new_mail_store_path, notice: "Invalid CSV file format."
+      end
+    else
+      @email = MailStore.new(mail_store_params)
+      respond_to do |format|
+        if @email.save
+          Delayed::Job.enqueue(EmailSendJob.new(@email))
+          format.html {redirect_to new_mail_store_path , notice: 'Email send successfully'}
+        else
+          format.html {redirect_to new_mail_store_path , notice: 'Email failed to send try again'}
+        end
       end
     end
   end

@@ -10,7 +10,7 @@
 <!--</html>-->
 <div id="content">
 
-  <h1>Syftet</h1>
+  <h1>Syftet <%#= MailStore.first.attachment.path %></h1>
   <%= form_for @email do |f| %>
 
       <div class="form-group col-md-6 mt15">
