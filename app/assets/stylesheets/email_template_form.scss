@@ -1,0 +1,44 @@
+
+.template{
+  width: 80%;
+  height: 900px;
+  margin: auto;
+  border: 1px solid #EFEFEF;
+}
+.header{
+  width: 100%;
+  height: 100px;
+  margin: auto;
+  background: #EFEFEF;
+}
+.logo{
+  text-align: left;
+  padding: 15px;
+}
+.logout-button{
+  text-align: right;
+  padding: 15px;
+  height: 30px;
+  margin: 0;
+}
+.template-body{
+  width: 100%;
+  height: 700px;
+  margin: auto;
+
+}
+
+.footer{
+  width: 100%;
+  height: 70px;
+  margin: auto;
+  background: #EFEFEF;
+
+}
+
+.footer p{
+  text-align: center;
+  padding: 20px;
+  margin: 0px;
+}
+
