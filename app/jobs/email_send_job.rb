@@ -1,6 +1,8 @@
 class EmailSendJob < Struct.new(:email)
 
   def perform
+    p '*********************************'
+
     all_recipient = email.recipient.split(/,/)
     number_of_recipient =  all_recipient.length
 
@@ -9,6 +11,7 @@ class EmailSendJob < Struct.new(:email)
       mail_recipient = MailStore.find_by_id(email.id)
       UserMailer.send_email(email_address, mail_recipient).deliver_now
     end
+    p '************************************'
   end
 
 end

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170730141257) do
+ActiveRecord::Schema.define(version: 20170803063841) do
 
   create_table "delayed_jobs", force: :cascade do |t|
     t.integer  "priority",   limit: 4,     default: 0, null: false
@@ -32,10 +32,10 @@ ActiveRecord::Schema.define(version: 20170730141257) do
   create_table "mail_stores", force: :cascade do |t|
     t.string   "subject",    limit: 255
     t.string   "title",      limit: 255
-    t.string   "recipient",  limit: 255
-    t.string   "message",    limit: 255
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
+    t.text     "recipient",  limit: 65535
+    t.text     "message",    limit: 65535
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
     t.string   "attachment", limit: 255
   end
 

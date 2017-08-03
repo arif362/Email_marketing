@@ -1,11 +1,17 @@
+<html>
+<head>
+  <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,700,600" rel="stylesheet" type="text/css">
 <div>
-  <style>
+  <style type="text/css">
       .template{
           margin: auto;
           padding: 0;
           height: 650px;
           width: 60%;
-          background: #FFFFFF;
+          background-color: #FFFFFF;
+          background-image: url('/assets/page1.png');
+          background-attachment: fixed;
+          background-repeat: no-repeat;
           margin-top: 20px;
           margin-bottom: 20px;
           border: 1px solid #DADADA;
@@ -14,7 +20,7 @@
       .header{
           height: 100px;
           width: 100% ;
-          background: #F7F7F7;
+          background-color: #C2E8F5;
       }
       .logo{
           text-align: center;
@@ -22,19 +28,34 @@
       }
 
       .content {
-          height: 450px;
+          height: 500px;
           width: 100%;
           margin: auto;
       }
 
       .welcome-note{
           text-align: center;
+          height: 40px;
       }
+
+      .welcome-note p{
+          margin: 0px;
+          padding-top: 20px;
+      }
+
       .description{
           width: 80%;
+          height: 210px;
           margin: auto;
           text-align: justify;
       }
+
+      .description p{
+          margin: 0px;
+          padding: 10px;
+          text-align: justify;
+      }
+
       .button{
           text-align: center;
           background-color: #00BBEA;
@@ -47,14 +68,31 @@
       .slide{
           margin-top: 20px;
           width: 80%;
-          height: 300px;
+          height: 230px;
           margin: auto;
-          padding: 20px;
+          padding: 10px;
 
       }
-
+      .slide img{
+          width: 100%;
+          height: 200px;
+      }
+      .footer{
+          height: 38px;
+          width: 100%;
+          margin: auto;
+          background-color: #C2E8F5;
+          text-align: center;
+      }
+      .footer p{
+          padding: 11px;
+          text-color: black;
+          font-size: 12px;
+      }
   </style>
 </div>
+</head>
+<body>
 <div class="template">
 
   <div class="header">
@@ -75,15 +113,17 @@
 
     <div class="button">
       <a href="#"> Let's Get Started </a>
-      <%#= link_to "Let's Get Started"  %>
     </div>
     <div class="slide">
-      <%= image_tag("beaccount.jpg", height: '250px', width: '610px', :alt => "") %>
+      <%= image_tag("beaccount.jpg", :alt => "") %>
     </div>
 
   </div>
 
-  <div class="footer"></div>
-
+  <div class="footer">
+    <p><a href="syftet.com">Syftet Ltd Bangladesh</a></p>
+  </div>
 
 </div>
+</body>
+</html>
